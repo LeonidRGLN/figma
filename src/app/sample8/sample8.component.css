@@ -1,0 +1,18 @@
+main{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+img{
+    width: 250px;
+    height: 250px;
+}
+footer{
+    margin-top: 20px;
+}
+h2{
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+.center, .right{
+    margin-left: 10px;
+}

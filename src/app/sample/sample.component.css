@@ -1,0 +1,14 @@
+/* Properties */
+.container_main{
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    
+}
+.right_site p {
+    margin-left: 24px;
+}
+h2{
+    margin: 0px 34px ;
+}

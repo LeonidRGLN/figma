@@ -1,0 +1,14 @@
+h2{
+    margin: 0;
+}
+.container_main{
+    display: flex;
+    flex-wrap: nowrap;
+    /* border: 1px solid red; */
+}
+h3{
+    margin: 0;
+}
+img {
+    margin-left: 24px;
+}

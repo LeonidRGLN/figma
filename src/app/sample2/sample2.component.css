@@ -1,0 +1,16 @@
+.container_main{
+    display: flex;
+    flex-wrap: nowrap;
+    /* border: 1px solid red; */
+    
+}
+.right_site p {
+    margin-left: 24px;
+}
+h2{
+    font-size: 24px;
+    margin: 0px 24px ;
+}
+footer{
+    margin-top: 50px;
+}
