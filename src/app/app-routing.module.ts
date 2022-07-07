@@ -14,14 +14,14 @@ import { Sample8Component } from './book/sample8/sample8.component'
 
 const routes: Routes = [
   {path:'', component: BookComponent},
-  {path:'sapmle', component: SampleComponent},
-  {path:'sapmle2', component: Sample2Component},
-  {path:'sapmle3', component: Sample3Component},
-  {path:'sapmle4', component: Sample4Component},
-  {path:'sapmle5', component: Sample5Component},
-  {path:'sapmle6', component: Sample6Component},
-  {path:'sapmle7', component: Sample7Component},
-  {path:'sapmle8', component: Sample8Component},
+  {path:'sample', component: SampleComponent},
+  {path:'sample2', component: Sample2Component},
+  {path:'sample3', component: Sample3Component},
+  {path:'sample4', component: Sample4Component},
+  {path:'sample5', component: Sample5Component},
+  {path:'sample6', component: Sample6Component},
+  {path:'sample7', component: Sample7Component},
+  {path:'sample8', component: Sample8Component},
   {path:'**', component: NotFoundComponent }
 ];
 
