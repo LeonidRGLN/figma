@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-sample8',
   templateUrl: './sample8.component.html',
-  styleUrls: ['./sample8.component.css']
+  styleUrls: ['./sample8.component.css','../book.component.css']
 })
 export class Sample8Component implements OnInit {
 

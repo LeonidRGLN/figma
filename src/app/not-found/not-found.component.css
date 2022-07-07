@@ -1,0 +1,46 @@
+
+.logo{
+    margin: 0;
+    height: 1000px;
+    background-image: url("/assets/404.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    font-family: Robotot;
+}
+h1{
+    font-size: 144px;
+    margin: 0;
+}
+h2{
+    font-size: 48px;
+    margin: 0;
+}
+p{
+    font-size: 18px;
+    font-weight: bold;
+}
+.button_a{
+    font-size: 30px;
+    color: #4E1D1D;
+    text-decoration: none;
+    margin: 0;
+}
+.button{
+    margin-left: 190px;
+    height: 72px;
+    width: 295.2423400878906px;
+    border-radius: 25px;
+    background: #5FCEF1;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    padding: 0;
+}
+.button:hover{
+    cursor: pointer;
+}

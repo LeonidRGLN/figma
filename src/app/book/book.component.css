@@ -1,0 +1,73 @@
+.wrapper{
+    width: 1800px;
+    /* border: 1px solid red; */
+    margin:0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+body{
+    background: #E5E5E5;
+}
+.book{
+    height: 595px;
+    width: 842px;
+    border-radius: 0px;
+    /* border: 1px solid blue; */   
+    margin-bottom: 30px;
+    background: white;
+    font-family: 'Segoe UI'
+}
+.header_title{
+    padding: 16px 0 18px 40px;
+    /* border: 1px solid blue; */
+    border-bottom: 1px solid #D8D8D8;
+}
+main{
+    padding: 24px 40px;
+}
+.container_main{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+p{
+    font-size: 14px;
+    line-height: 20px;
+}
+h2{
+    font-size: 24px;
+}
+h3{
+    font-size: 18px; 
+}
+p:hover{
+    text-decoration: underline;
+    text-decoration-color: rgb(97, 165, 243);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+img:hover{
+    box-shadow: 0 0 0 3px rgb(97, 165, 243);
+    cursor: pointer;
+}
+header:hover{
+    box-shadow: 0 0 0 3px rgb(97, 165, 243);
+    cursor: pointer;
+}
+h2:hover{
+    text-decoration: underline;
+    text-decoration-color: rgb(97, 165, 243);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+h3:hover{
+    text-decoration: underline;
+    text-decoration-color: rgb(97, 165, 243);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
