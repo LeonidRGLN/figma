@@ -11,7 +11,7 @@ import { Sample6Component } from './sample6/sample6.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { Sample7Component } from './sample7/sample7.component';
 import { Sample8Component } from './sample8/sample8.component';
-import { RouterModule} from '@angular/router';
+import { BookRoutingModule } from './book-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,13 +24,14 @@ import { RouterModule} from '@angular/router';
     Sample6Component,
     PaginationComponent,
     Sample7Component,
-    Sample8Component
+    Sample8Component,
+    
   ],
   imports: [
-    BrowserModule,RouterModule
+    BrowserModule,
+    BookRoutingModule,
   ],
   providers: [],
   bootstrap: [],
-  /* exports: [BookComponent] */
 })
 export class BookModule { }
