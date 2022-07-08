@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { NotFoundComponent } from '././not-found/not-found.component';
 import { BookComponent } from '././book/book.component'
 import { SampleComponent } from './book/sample/sample.component'
@@ -11,9 +10,10 @@ import { Sample5Component } from './book/sample5/sample5.component'
 import { Sample6Component } from './book/sample6/sample6.component'
 import { Sample7Component } from './book/sample7/sample7.component'
 import { Sample8Component } from './book/sample8/sample8.component'
+import { BookModule } from './book/book.module'
 
 const routes: Routes = [
-  {path:'', component: BookComponent},
+  {path:'', component: BookComponent}, 
   {path:'sample', component: SampleComponent},
   {path:'sample2', component: Sample2Component},
   {path:'sample3', component: Sample3Component},
@@ -26,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),BookModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
