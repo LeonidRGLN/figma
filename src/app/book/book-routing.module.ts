@@ -10,6 +10,8 @@ import { Sample6Component } from './sample6/sample6.component'
 import { Sample7Component } from './sample7/sample7.component'
 import { Sample8Component } from './sample8/sample8.component'
 import { BookComponent } from './book.component';
+import { TableSortingExample } from './table/table.component';
+/* import { TableExpandableRowsExample } from './table/table.component' */
 
 
 export const bookRoutes: Routes = [
@@ -21,7 +23,9 @@ export const bookRoutes: Routes = [
   {path:'home/sample5', component: Sample5Component},
   {path:'home/sample6', component: Sample6Component},
   {path:'home/sample7', component: Sample7Component},
-  {path:'home/sample8', component: Sample8Component}
+  {path:'home/sample8', component: Sample8Component},
+  {path:'home/table', component: TableSortingExample}
+  /* {path:'home/table', component: TableExpandableRowsExample} */
 ];
 
 @NgModule({

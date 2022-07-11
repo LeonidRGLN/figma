@@ -12,6 +12,10 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { Sample7Component } from './sample7/sample7.component';
 import { Sample8Component } from './sample8/sample8.component';
 import { BookRoutingModule } from './book-routing.module';
+import { TableSortingExample } from './table/table.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
@@ -25,11 +29,14 @@ import { BookRoutingModule } from './book-routing.module';
     PaginationComponent,
     Sample7Component,
     Sample8Component,
+    TableSortingExample
     
   ],
   imports: [
     BrowserModule,
     BookRoutingModule,
+    MatSortModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [],
