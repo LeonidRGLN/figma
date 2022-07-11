@@ -13,8 +13,8 @@ import { NotFoundComponent } from './not-found/not-found.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BookModule
+    BookModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

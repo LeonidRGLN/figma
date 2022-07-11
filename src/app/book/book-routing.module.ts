@@ -13,18 +13,15 @@ import { BookComponent } from './book.component';
 
 
 export const bookRoutes: Routes = [
-  {path:'home', component: BookComponent, children:[
-  {path:'sample', component: SampleComponent},
-  {path:'sample2', component: Sample2Component},
-  {path:'sample3', component: Sample3Component},
-  {path:'sample4', component: Sample4Component},
-  {path:'sample5', component: Sample5Component},
-  {path:'sample6', component: Sample6Component},
-  {path:'sample7', component: Sample7Component},
-  {path:'sample8', component: Sample8Component}]
-},{
-  path:'', redirectTo:'/home/sample',pathMatch:'full'
-}
+  {path:'home', component: BookComponent},
+  {path:'home/sample', component: SampleComponent},
+  {path:'home/sample2', component: Sample2Component},
+  {path:'home/sample3', component: Sample3Component},
+  {path:'home/sample4', component: Sample4Component},
+  {path:'home/sample5', component: Sample5Component},
+  {path:'home/sample6', component: Sample6Component},
+  {path:'home/sample7', component: Sample7Component},
+  {path:'home/sample8', component: Sample8Component}
 ];
 
 @NgModule({
