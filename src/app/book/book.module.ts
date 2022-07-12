@@ -15,6 +15,10 @@ import { BookRoutingModule } from './book-routing.module';
 import { TableSortingExample } from './table/table.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import { RegistrationComponent } from './registration/registration.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
+/* import { TableHelperComponent } from './table-helper/table-helper.component';
+ */
 
 
 @NgModule({
@@ -29,7 +33,10 @@ import {MatSortModule} from '@angular/material/sort';
     PaginationComponent,
     Sample7Component,
     Sample8Component,
-    TableSortingExample
+    TableSortingExample,
+    RegistrationComponent,
+    AuthorizationComponent
+    /* TableHelperComponent */
     
   ],
   imports: [

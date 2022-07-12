@@ -1,0 +1,64 @@
+.wrapper{
+    margin: 0;
+    height: 1000px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container{
+    width: 1200px;
+    height:800px;
+    background: url(/assets/Sign\ Up\ Page.png) no-repeat ;
+    background-size:cover;
+    
+
+}
+.container_window{
+    text-align: center;
+    width: 455px;
+    height: 500px;
+    border: 1px solid transparent;
+    margin: 140px 120px;
+    color: white;
+}
+h1{
+    margin-top: 46px;
+    font-size: 52px;
+}
+.field{
+    /* border: 1px solid red; */
+    text-align:start;
+    margin: 20px;
+    height: 50px;
+    border-bottom: 3px solid white;
+    font: 18px bold 'Poppins';
+    
+}
+.container_field{
+    margin-top: 50px;
+}
+.button{
+    width: 250px;
+    height: 40px;
+    /* border: 1px solid red; */
+    margin-left: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #62FFB499;
+    color: black;
+}
+
+.entry_field{
+    width: 98%;
+    background-color: transparent;
+    border-color: transparent;
+}
+.redirect{
+    color: #62FFB499;
+    text-decoration: none;
+}
+

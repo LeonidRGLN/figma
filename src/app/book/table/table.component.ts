@@ -10,7 +10,13 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
-  extend?: string; 
+  
+}
+export interface ExtendedDatas{
+  name: string;
+  position: number;
+  weight: number;
+  displayedInCell: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -26,7 +32,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
-  let extendedData = [
+ const extendedData: ExtendedDatas[] = [
   {position: 24, name: 'ElementName', weight: 881.9950604495106, displayedInCell: 'Is not gas'},
   {position: 18, name: 'ElementName', weight: 797.1882834817152, displayedInCell: 'Is not gas'},
   {position: 81, name: 'ElementName', weight: 83.27795127138148, displayedInCell: 'Is not gas'},
@@ -38,6 +44,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 73, name: 'ElementName', weight: 228.65816441155462, displayedInCell: 'Is not gas'},
   {position: 6, name: 'ElementName', weight: 767.8192773812831, displayedInCell: 'Is not gas'},
 ]
+
 
 
 @Component({
@@ -56,19 +63,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class TableSortingExample implements AfterViewInit {
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-  dataSource2 = [...ELEMENT_DATA];
+  dataElements = ELEMENT_DATA
+  dataSource = new MatTableDataSource(this.dataElements);
+  dataSource2 = [...this.dataElements];
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  displayedColumns2: string[] = ['position', 'name', 'weight', 'symbol'];
-  columnsToDisplayWithExpand = [...this.displayedColumns2, 'extend'];
+  displayedColumnsInside: string[] = ['position', 'name', 'weight', 'displayedInCell'];
+  columnsToDisplayWithExpand = [...this.displayedColumns, 'extend'];
   expandedElement : PeriodicElement | any;
 
   @ViewChild(MatTable) table: MatTable<PeriodicElement> | any;
 
   addData() {
     const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
-    this.dataSource2.push(ELEMENT_DATA[randomElementIndex]);
+    this.dataSource2 = [...this.dataElements, this.dataElements[randomElementIndex]];
     this.table.renderRows();
   }
 
@@ -80,7 +88,9 @@ export class TableSortingExample implements AfterViewInit {
 
 
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer) {
+
+  }
   
   @ViewChild(MatSort) sort: MatSort | any ;
 
@@ -88,12 +98,7 @@ export class TableSortingExample implements AfterViewInit {
     this.dataSource2.sort = this.sort;
   }
 
-  /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
-    // This example uses English messages. If your application supports
-    // multiple language, you would internationalize these strings.
-    // Furthermore, you can customize the message to add additional
-    // details about the values being sorted.
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {
@@ -101,3 +106,4 @@ export class TableSortingExample implements AfterViewInit {
     }
   }
 }
+
