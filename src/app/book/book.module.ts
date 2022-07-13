@@ -20,6 +20,9 @@ import { AuthorizationComponent } from './authorization/authorization.component'
 /* import { TableHelperComponent } from './table-helper/table-helper.component';
  */
 import { MatIconModule } from "@angular/material/icon";
+import { FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { MatIconModule } from "@angular/material/icon";
     MatSortModule,
     MatTableModule,
     MatIconModule,
-
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [],
