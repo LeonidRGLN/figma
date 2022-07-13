@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BookModule } from './book/book.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

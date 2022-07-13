@@ -19,7 +19,7 @@ export interface ExtendedData{
   displayedInCell: string;
 }
 
-let ELEMENT_DATA: PeriodicElement[] = [
+let data: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -29,7 +29,7 @@ let ELEMENT_DATA: PeriodicElement[] = [
   {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
   {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'}  
 ];
 
  let extendedData: ExtendedData[] = [
@@ -45,14 +45,16 @@ let ELEMENT_DATA: PeriodicElement[] = [
   {position: 6, name: 'ElementName', weight: 767.8192773812831, displayedInCell: 'Is not gas'},
 ]
 
-let ExtendedDataElement = ELEMENT_DATA.map(e => {
-  const d = JSON.stringify(extendedData);
+let ExtendedDataElement = data.map(e => {
+  
   return {
-    ...e,
-    d
+    ...e, extendedData
+    
   }
 })
 console.log(ExtendedDataElement);
+ 
+
 
 
 
@@ -88,7 +90,7 @@ export class TableSortingExample implements OnInit {
   @ViewChild(MatTable) table: MatTable<PeriodicElement> | any;
 
   addData() {
-    const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
+    const randomElementIndex = Math.floor(Math.random() * data.length);
     this.dataSource = [...this.dataSource, this.dataSource[randomElementIndex]];
     this.table.renderRows();
   }
