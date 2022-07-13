@@ -1,5 +1,5 @@
 import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -10,16 +10,16 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
-  
+  ExtendedData?: ExtendedData[]
 }
-export interface ExtendedDatas{
+export interface ExtendedData{
   name: string;
   position: number;
   weight: number;
   displayedInCell: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+let ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -32,7 +32,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
- const extendedData: ExtendedDatas[] = [
+ let extendedData: ExtendedData[] = [
   {position: 24, name: 'ElementName', weight: 881.9950604495106, displayedInCell: 'Is not gas'},
   {position: 18, name: 'ElementName', weight: 797.1882834817152, displayedInCell: 'Is not gas'},
   {position: 81, name: 'ElementName', weight: 83.27795127138148, displayedInCell: 'Is not gas'},
@@ -44,6 +44,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 73, name: 'ElementName', weight: 228.65816441155462, displayedInCell: 'Is not gas'},
   {position: 6, name: 'ElementName', weight: 767.8192773812831, displayedInCell: 'Is not gas'},
 ]
+
+let ExtendedDataElement = ELEMENT_DATA.map(e => {
+  const d = JSON.stringify(extendedData);
+  return {
+    ...e,
+    d
+  }
+})
+console.log(ExtendedDataElement);
 
 
 
@@ -61,41 +70,47 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 
+export class TableSortingExample implements OnInit {
+  
+  
+ 
+  
+  
+  dataSource = ExtendedDataElement;
 
-export class TableSortingExample implements AfterViewInit {
-  dataElements = ELEMENT_DATA
-  dataSource = new MatTableDataSource(this.dataElements);
-  dataSource2 = [...this.dataElements];
+  columnsToDisplay = ['position', 'name', 'weight', 'symbol'];
+  displayedColumnsInside = ['position', 'name',  'displayedInCell','weight', ];
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  displayedColumnsInside: string[] = ['position', 'name', 'weight', 'displayedInCell'];
-  columnsToDisplayWithExpand = [...this.displayedColumns, 'extend'];
+
+  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand',  ];
   expandedElement : PeriodicElement | any;
 
   @ViewChild(MatTable) table: MatTable<PeriodicElement> | any;
 
   addData() {
     const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
-    this.dataSource2 = [...this.dataElements, this.dataElements[randomElementIndex]];
+    this.dataSource = [...this.dataSource, this.dataSource[randomElementIndex]];
     this.table.renderRows();
   }
 
   removeData() {
-    this.dataSource2.pop();
+    this.dataSource.pop();
     this.table.renderRows();
   }
 
 
 
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {
+  constructor(/* private _liveAnnouncer: LiveAnnouncer */) {
 
   }
   
-  @ViewChild(MatSort) sort: MatSort | any ;
+  ngOnInit(): void {
+  }
+  /* @ViewChild(MatSort) sort: MatSort | any ;
 
   ngAfterViewInit() {
-    this.dataSource2.sort = this.sort;
+    this.dataSource.sort = this.sort;
   }
 
   announceSortChange(sortState: Sort) {
@@ -104,6 +119,7 @@ export class TableSortingExample implements AfterViewInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
-  }
+  } */
 }
+
 

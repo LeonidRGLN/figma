@@ -19,7 +19,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 /* import { TableHelperComponent } from './table-helper/table-helper.component';
  */
-
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { AuthorizationComponent } from './authorization/authorization.component'
     TableSortingExample,
     RegistrationComponent,
     AuthorizationComponent
+    
     /* TableHelperComponent */
     
   ],
@@ -43,7 +44,9 @@ import { AuthorizationComponent } from './authorization/authorization.component'
     BrowserModule,
     BookRoutingModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule,
+
   ],
   providers: [],
   bootstrap: [],
