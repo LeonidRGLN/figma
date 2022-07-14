@@ -15,13 +15,11 @@ import { BookRoutingModule } from './book-routing.module';
 import { TableSortingExample } from './table/table.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
-import { RegistrationComponent } from './registration/registration.component';
-import { AuthorizationComponent } from './authorization/authorization.component';
+
 /* import { TableHelperComponent } from './table-helper/table-helper.component';
  */
 import { MatIconModule } from "@angular/material/icon";
-import { FormsModule} from "@angular/forms";
-import {ReactiveFormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -36,12 +34,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     PaginationComponent,
     Sample7Component,
     Sample8Component,
-    TableSortingExample,
-    RegistrationComponent,
-    AuthorizationComponent
-    
-    /* TableHelperComponent */
-    
+    TableSortingExample
   ],
   imports: [
     BrowserModule,
@@ -49,8 +42,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatSortModule,
     MatTableModule,
     MatIconModule,
-    FormsModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [],

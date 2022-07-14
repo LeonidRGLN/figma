@@ -1,13 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
-
 @Injectable({
     providedIn: 'root'
 })
-export class AppServise {
+export class AppServises {
 
-    api = 'httрs://ya.ru/'
+    api = 'https://jsonproject-53629-default-rtdb.firebaseio.com/get-assembly.json'
 
     constructor(private http: HttpClient){}
 
@@ -16,4 +15,3 @@ export class AppServise {
     }
 
 }
-

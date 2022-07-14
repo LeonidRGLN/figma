@@ -35,7 +35,6 @@ h1{
     border-bottom: 3px solid white;
     font: 18px bold 'Poppins';
     
-    
 }
 .container_field{
     margin-top: 50px;
@@ -63,6 +62,10 @@ h1{
     text-decoration: none;
 }
 
-.invalided{
-    color:red;
+button {
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    background: #62FFB4;
+
 }

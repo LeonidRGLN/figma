@@ -11,9 +11,9 @@ import { Sample7Component } from './sample7/sample7.component'
 import { Sample8Component } from './sample8/sample8.component'
 import { BookComponent } from './book.component';
 import { TableSortingExample } from './table/table.component';
-import { RegistrationComponent } from './registration/registration.component'
+import { RegistrationComponent } from '../registration/registration.component'
 /* import { TableExpandableRowsExample } from './table/table.component' */
-import {AuthorizationComponent} from './authorization/authorization.component'
+import {AuthorizationComponent} from '../authorization/authorization.component'
 
 export const bookRoutes: Routes = [
   {path:'home', component: BookComponent},

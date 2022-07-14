@@ -18,10 +18,10 @@
                 </div>
                 <div class="field">
                     <p>Password</p>
-                    <input class="entry_field" type="text" formControlName="userPassword">
+                    <input class="entry_field" type="password" formControlName="userPassword">
                     <div class="invalided" *ngIf="addFormGroup.controls['userPassword'].invalid && addFormGroup.controls['userPassword'].touched " >Некоректные данные</div>
                 </div>
-                <button [disabled]="addFormGroup.invalid">sign up</button>
+                <button [disabled]="addFormGroup.invalid">Регистрация</button>
             </form>
             
         </div>

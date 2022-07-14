@@ -13,11 +13,12 @@
 }
 h1{
     font-size: 144px;
-    margin: 0;
+    margin-bottom: 50px;
+    
 }
 h2{
     font-size: 48px;
-    margin: 0;
+    margin-bottom: 20px;
 }
 p{
     font-size: 18px;
