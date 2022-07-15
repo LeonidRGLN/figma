@@ -36,10 +36,10 @@ export class PaginationComponent {
     Countss2= Countss + 2
     this.router.navigate([this.routerlink[Countss-1]])
 
-    if(Countss >= 11){
+    if(Countss >= 10){
       Countss = 1;
     }
-    if(Countss2 >= 11){
+    if(Countss2 >= 10){
       Countss2 = 2
     }
   }
