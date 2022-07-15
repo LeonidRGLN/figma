@@ -13,7 +13,7 @@ import { AuthorizationComponent } from './authorization/authorization.component'
 import { FormsModule} from "@angular/forms";
 import {ReactiveFormsModule} from "@angular/forms";
 import { ChartsComponent } from './charts/charts.component';
-
+import { PaginationComponent } from './book/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { ChartsComponent } from './charts/charts.component';
     NotFoundComponent,
     RegistrationComponent,
     AuthorizationComponent,
-    ChartsComponent
+    ChartsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -30,10 +31,12 @@ import { ChartsComponent } from './charts/charts.component';
     FormsModule,
     ReactiveFormsModule,
     BookModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
 
     
   ],
+  exports:[],
   providers: [AppServise],
   bootstrap: [AppComponent]
 })
