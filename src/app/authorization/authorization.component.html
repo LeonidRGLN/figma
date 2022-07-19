@@ -1,4 +1,4 @@
-<div class="wrapper"> 
+<div class="wrapper">
     <div class="container">
         <div class="container_window">
             <h1>Авторизация</h1>
@@ -6,24 +6,24 @@
             <form class="container_field" [formGroup]="addFormGroup" (submit)="log(addFormGroup)">
                 <div class="field">
                     <p>Email</p>
-                    <input class="entry_field" type="text" formControlName="userEmail">
+                    <input class="entry_field" type="text" #email formControlName="userEmail">
                     <div class="invalided" *ngIf="addFormGroup.controls['userEmail'].invalid && addFormGroup.controls['userEmail'].touched">Неправильные данные
                     </div>
                 </div>
                 <div class="field">
                     <p>Password</p>
-                    <input class="entry_field" type="password" formControlName="userPassword">
+                    <input class="entry_field" type="password" #password formControlName="userPassword">
                     <div *ngIf="addFormGroup.controls['userPassword'].invalid && addFormGroup.controls['userPassword'].touched">Неправильные данные
                     </div>
                 </div>
-                <button [disabled]="addFormGroup.invalid">Войти</button>
+                <button (click)="onSignin(email.value, password.value)" [disabled]="addFormGroup.invalid">Войти</button>
             </form>
-            
+
         </div>
-        
-        
+
+
     </div>
-        
+
 </div>
 
 

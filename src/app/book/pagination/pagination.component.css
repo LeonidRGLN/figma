@@ -4,7 +4,7 @@ ul{
     margin: auto 0;
     justify-content: center;
 }
-li{
+a{
     border: 1px solid transparent;
     list-style-type: none;
     margin-right: 4px;
@@ -13,8 +13,9 @@ li{
     height: 22px;
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
 }
-li:hover:not(.active) {
+a:hover:not(.active) {
     background-color: #F2F2F2;
 }
 .active{

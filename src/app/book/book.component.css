@@ -1,3 +1,8 @@
+
+
+.book{
+  margin:0 auto;
+}
 .wrapper{
     width: 1800px;
     /* border: 1px solid red; */
@@ -14,7 +19,7 @@ body{
     height: 595px;
     width: 842px;
     border-radius: 0px;
-    /* border: 1px solid blue; */   
+    /* border: 1px solid blue; */
     margin-bottom: 30px;
     background: white;
     font-family: 'Segoe UI'
@@ -40,7 +45,7 @@ h2{
     font-size: 24px;
 }
 h3{
-    font-size: 18px; 
+    font-size: 18px;
 }
 p:hover{
     text-decoration: underline;

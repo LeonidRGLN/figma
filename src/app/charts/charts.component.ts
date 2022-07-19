@@ -1,9 +1,12 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef} from '@angular/core';
 import { registerables, Chart } from 'chart.js';
 
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {map} from 'rxjs';
-import { AppServises} from './charts.servise';
+import {API, AppServises} from './charts.servise';
+import {Data} from './charts.servise'
+
+
 
 @Component({
   selector: 'app-charts',
@@ -14,10 +17,15 @@ import { AppServises} from './charts.servise';
 
 
 export class ChartsComponent implements OnInit {
-  data: any; canvas: any; ctx: any; canvascanvas: any; ctxctx: any;
-  
-  @ViewChild('chart') chart: any
-  @ViewChild('chart1') chart1: any
+  data:Data[]= [];
+  canvas:HTMLCanvasElement | undefined
+  ctx: any | undefined
+  canvas2: HTMLCanvasElement| undefined
+  ctx2: any | undefined
+
+  @ViewChild('chart') chart: ElementRef|undefined
+  @ViewChild('chart1') chart1: ElementRef|undefined
+
 
   constructor(private stats: AppServises) {
     Chart.register(ChartDataLabels);
@@ -27,18 +35,19 @@ export class ChartsComponent implements OnInit {
   ngOnInit() {
     this.stats.getServe()
       .pipe(
-        map((value: any) => value.data)
-      ).subscribe(
-        (value: any) => this.data = value,
-        (err:any) => console.log(err),
+        map((value:API) => value.data)
+      )
+      .subscribe(
+        (value ) => this.data = value.reverse(),
+        (err) => console.error(err),
         () => this.createChart()
       ) }
 
-  createChart() {
-    this.canvas = this.chart.nativeElement;
-    this.canvascanvas = this.chart1.nativeElement;
-    this.ctx = this.canvas.getContext('2d');
-    this.ctxctx = this.canvascanvas.getContext('2d');
+  createChart():void {
+    this.canvas = this.chart?.nativeElement;
+    this.canvas2 = this.chart1?.nativeElement;
+    this.ctx = this.canvas?.getContext('2d');
+    this.ctx2 = this.canvas2?.getContext('2d');
 
 
     new Chart(this.ctx, {
@@ -110,12 +119,12 @@ export class ChartsComponent implements OnInit {
           }}},});
 
     let s = 0,s2 = 0,s3 = 0,s4 = 0;
- 
-    this.data.forEach((value: any) => {
+
+    this.data.forEach((value) => {
       s += value.qty_shk_cat1; s2 += value.qty_shk_cat2; s3 += value.qty_shk_cat3; s4 += value.qty_shk_cat4
       })
 
-    new Chart(this.ctxctx, {
+    new Chart(this.ctx2, {
       type: 'pie',
       data: {
         labels: ['кликни', 'на', 'крестик', 'справа в верху'],

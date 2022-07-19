@@ -1,5 +1,4 @@
-<ul>
-    <li class="active">{{Knopka1}}</li>
-    <li (click)="pageNext()">{{Knopka2}}</li>
-    <li (click)="pageNext2()">{{Knopka3}}</li>
+<ul class="listpaginative">
+    <a *ngFor="let el of way" [routerLink]="'/sample' + el" routerLinkActive="active">{{el}}</a>
 </ul>
+

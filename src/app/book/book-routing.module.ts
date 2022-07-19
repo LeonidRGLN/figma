@@ -11,24 +11,19 @@ import { Sample7Component } from './sample7/sample7.component'
 import { Sample8Component } from './sample8/sample8.component'
 import { BookComponent } from './book.component';
 import { TableSortingExample } from './table/table.component';
-import { RegistrationComponent } from '../registration/registration.component'
-/* import { TableExpandableRowsExample } from './table/table.component' */
-import {AuthorizationComponent} from '../authorization/authorization.component'
+
+
 
 export const bookRoutes: Routes = [
-  {path:'home', component: BookComponent},
-  {path:'home/sample', component: SampleComponent},
-  {path:'home/sample2', component: Sample2Component},
-  {path:'home/sample3', component: Sample3Component},
-  {path:'home/sample4', component: Sample4Component},
-  {path:'home/sample5', component: Sample5Component},
-  {path:'home/sample6', component: Sample6Component},
-  {path:'home/sample7', component: Sample7Component},
-  {path:'home/sample8', component: Sample8Component},
-  {path:'home/table', component: TableSortingExample},
-  {path: 'registration', component:  RegistrationComponent},
-  {path: 'authorization', component: AuthorizationComponent}
-  /* {path:'home/table', component: TableExpandableRowsExample} */
+  {path:'sample1', component: SampleComponent},
+  {path:'sample2', component: Sample2Component},
+  {path:'sample3', component: Sample3Component},
+  {path:'sample', component: Sample4Component},
+  {path:'sample4', component: Sample5Component},
+  {path:'sample5', component: Sample6Component},
+  {path:'sample6', component: Sample7Component},
+  {path:'sample7', component: Sample8Component},
+  {path:'table', component: TableSortingExample}
 ];
 
 @NgModule({
